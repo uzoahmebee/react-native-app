@@ -1,11 +1,14 @@
 import React from 'react';
+import {Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { AppRegistry, Image } from 'react-native';
 
 export default class App extends React.Component {
-  render() {
+  render() {   
     return (
       <View style={styles.container}>
-         <Text>Hello world!</Text>
+         <Text>Hello world! </Text>
+         <Image source={require('./pictures/olusegun-samuel-seal.jpg')} style={{width: 290, height: 205}}/>
       </View>
     );
   }
