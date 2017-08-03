@@ -1,5 +1,5 @@
 import React , {Component } from 'react';
-import { StyleSheet, Text, View , AppRegistry, Image } from 'react-native';
+import { StyleSheet, Text, TextInput, View , AppRegistry, Image } from 'react-native';
 
 class Blink extends Component {
   constructor(props) {
@@ -23,10 +23,22 @@ class Blink extends Component {
 }
 
 export default class App extends Component {
+constructor (props) {
+  super(props);
+  this.state = {text: ''};
+}
+
 
   render() {   
     return (
       <View style={styles.container}>
+        <TextInput
+            style = {{height:40}}
+            placeholder="Type here to translate!"
+            onChangeText={(text) => this.setState({text})} />
+          <Text style = {{padding: 10, fontSize: 42}}>
+            {this.state.text.split(' ').map((word) => word && '👍').join(' ')} 
+           </Text>
          <Text style ={styles.bluelarge}>Hello world! </Text>
          <Blink text='Blinking Text Line 1' />
          <Blink text='Blinking Text Line 2'/>
@@ -34,6 +46,8 @@ export default class App extends Component {
               style={{width: 290, height: 205}}/>
          <View style= {{ backgroundColor: 'powderblue',
             width: 50, height: 50}}/>
+
+
       </View>
     );
   }
