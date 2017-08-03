@@ -27,10 +27,11 @@ export default class App extends Component {
   render() {   
     return (
       <View style={styles.container}>
-         <Text style ={styles.blue-large}>Hello world! </Text>
+         <Text style ={styles.bluelarge}>Hello world! </Text>
          <Blink text='Blinking Text Line 1' />
          <Blink text='Blinking Text Line 2'/>
          <Image source={require('./pictures/olusegun-samuel-seal.jpg')} style={{width: 290, height: 205}}/>
+         <View style= {{flex: 2, backgroundColor: 'powderblue'}}/>
       </View>
     );
   }
@@ -41,11 +42,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'center',
+    //alignItems: 'center',
+    //justifyContent: 'center',
   },
 
-  blue-large: {
+  blueLarge: {
     color: 'blue',
     fontSize: 30,
   },
