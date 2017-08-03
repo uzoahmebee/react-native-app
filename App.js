@@ -3,20 +3,41 @@ import {Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { AppRegistry, Image } from 'react-native';
 
+class Blink extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {showText: true};
+
+    // Toggle the state every 2 seconds
+    setInterval(() => {
+      this.setState(previousState => {
+        return { showText: !previousState.showText };
+      });
+    }, 2000);
+  }
+
+    render() {
+    let display = this.state.showText ? this.props.text : ' ';
+    return (
+      <Text>{display}</Text>
+    );
+  }
+}
+
 export default class App extends React.Component {
+
   render() {   
     return (
       <View style={styles.container}>
          <Text>Hello world! </Text>
+         <Blink text='Blinking Text Line 1'/>
+         <Blink text='Blinking Text Line 2'/>
          <Image source={require('./pictures/olusegun-samuel-seal.jpg')} style={{width: 290, height: 205}}/>
       </View>
     );
   }
 }
 
-        //<Text>Open up App.js to start working on your app!</Text>
-        //<Text>Changes you make will automatically reload.</Text>
-       // <Text>Shake your phone to open the developer menu.</Text>
 
 const styles = StyleSheet.create({
   container: {
