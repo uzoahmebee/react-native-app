@@ -30,8 +30,10 @@ export default class App extends Component {
          <Text style ={styles.bluelarge}>Hello world! </Text>
          <Blink text='Blinking Text Line 1' />
          <Blink text='Blinking Text Line 2'/>
-         <Image source={require('./pictures/olusegun-samuel-seal.jpg')} style={{width: 290, height: 205}}/>
-         <View style= {{flex: 2, backgroundColor: 'powderblue'}}/>
+         <Image source={require('./pictures/olusegun-samuel-seal.jpg')} 
+              style={{width: 290, height: 205}}/>
+         <View style= {{ backgroundColor: 'powderblue',
+            width: 50, height: 50}}/>
       </View>
     );
   }
@@ -42,12 +44,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    //alignItems: 'center',
-    //justifyContent: 'center',
+    flexDirection: 'column',
+     justifyContent: 'space-around',
+     alignItems: 'center',
+   
   },
 
-  blueLarge: {
+  bluelarge: {
     color: 'blue',
     fontSize: 30,
+  },
+
+  white:{
+    color: 'white',
   },
 });
