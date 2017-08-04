@@ -1,5 +1,6 @@
 import React , {Component } from 'react';
-import { StyleSheet, Text, TextInput, View , AppRegistry, Image } from 'react-native';
+import { StyleSheet, Text, TextInput, View , AppRegistry, Image, Button, 
+    Alert } from 'react-native';
 
 class Blink extends Component {
   constructor(props) {
@@ -28,10 +29,20 @@ constructor (props) {
   this.state = {text: ''};
 }
 
+_onPressButton(){
+  Alert.alert('You tapped the button')
+}
 
   render() {   
     return (
       <View style={styles.container}>
+        <View style={styles.buttonContainer}>
+          <Button
+            onPress={this._onPressButton}
+            title="Tap Me"
+            color="white"
+          />
+        </View>
         <TextInput
             style = {{height:40}}
             placeholder="Type here to translate!"
@@ -55,6 +66,12 @@ constructor (props) {
 
 
 const styles = StyleSheet.create({
+  buttonContainer: {
+    margin:20,
+    backgroundColor: "#841584",
+
+  },
+
   container: {
     flex: 1,
     backgroundColor: 'white',
