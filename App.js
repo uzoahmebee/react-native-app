@@ -1,6 +1,6 @@
 import React , {Component } from 'react';
 import { StyleSheet, Text, TextInput, View , AppRegistry, Image, Button, 
-    Alert } from 'react-native';
+    Alert, TouchableOpacity } from 'react-native';
 
 class Blink extends Component {
   constructor(props) {
@@ -36,6 +36,11 @@ _onPressButton(){
   render() {   
     return (
       <View style={styles.container}>
+        <TouchableOpacity onPress={this._onPressButton}>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>TouchableOpacity</Text>
+          </View>
+        </TouchableOpacity>
         <View style={styles.buttonContainer}>
           <Button
             onPress={this._onPressButton}
@@ -66,27 +71,33 @@ _onPressButton(){
 
 
 const styles = StyleSheet.create({
-  buttonContainer: {
-    margin:20,
-    backgroundColor: "#841584",
-
+ button: {
+    marginBottom: 30,
+    width: 260,
+    alignItems: 'center',
+    backgroundColor: '#2196F3'
   },
-
+  buttonText: {
+    padding: 20,
+    color: 'white'
+  },
+   buttonContainer: {
+    margin:20,
+    backgroundColor: "#841584"
+  },
   container: {
     flex: 1,
     backgroundColor: 'white',
     flexDirection: 'column',
      justifyContent: 'space-around',
-     alignItems: 'center',
-   
+     alignItems: 'center'
   },
-
   bluelarge: {
     color: 'blue',
-    fontSize: 30,
+    fontSize: 30
   },
 
   white:{
-    color: 'white',
+    color: 'white'
   },
 });
